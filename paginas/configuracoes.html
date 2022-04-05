@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poco | Configurações</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  </head>
+
+  <body>
+    <div id="accordion">
+      <!-- Cabeçalho -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a id="urlConfiguracoesAdmin" href="#">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Configurações</li>
+        </ol>
+      </nav>
+      <div class="card">
+        <div class="card-header" id="headingCabecalho">
+          <h5 class="mb-0">
+            <button
+              class="btn btn-link"
+              data-toggle="collapse"
+              data-target="#collapseCabecalho"
+              aria-expanded="true"
+              aria-controls="collapseCabecalho"
+            >
+              <h1>Configurações</h1>
+            </button>
+          </h5>
+        </div>
+
+        <div
+          id="collapseCabecalho"
+          class="collapse show"
+          aria-labelledby="headingCabecalho"
+          data-parent="#accordion"
+        >
+          <div class="card-body">
+            Configurações de Quartos
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </body>
+
+  <script src="../paginas_js/jquery.js"></script>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
+
+  <script src="../paginas_js/validacao.js"></script>
+  <script src="../ajaxs/postProduto.js"></script>
+  <script src="../ajaxs/postCamareira.js"></script>
+  <script src="../ajaxs/postIG.js"></script>
+  <script src="../ajaxs/postQuarto.js"></script>
+
+  <script type="module" src="../boxes/box.js"></script>
+
+  <script src="../ajaxs/putIg.js"></script>
+
+  <script src="../paginas_js/blockCaixa.js"></script>
+</html>

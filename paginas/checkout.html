@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poco | Pagamento</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+  <section class="checkout-wrapper pt-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="checkout-style-1">
+            <div class="checkout-table table-responsive">
+
+
+
+              <div class="
+                checkout-coupon-total checkout-coupon-total-2
+                d-flex
+                flex-wrap
+              ">
+                <div class="checkout-coupon">
+                  <form>
+                    <div class="single-form form-default d-flex">
+                      <div class="form-input form">
+                        <input type="text" id="" placeholder="Pessoas">
+                        <input type="text" id="" placeholder="Código">
+                        <input type="text" id="" placeholder="Produtos">
+                        <input type="text" id="" placeholder="Quantidade">
+                        <input type="text" id="" placeholder="Descrição">
+                        <input type="text" id="" placeholder="Valor Unitário">
+                        <input type="text" id="" placeholder="Total">
+                      </div>
+                      <button type="button" class="main-btn primary-btn" id="desconto">Adicionar</button>
+                    </div>
+                  </form>
+                </div>
+
+
+
+
+
+              <!-- Produtos Comprados -->
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="product">Itens</th>
+                    <th class="quantity">Quantidade</th>
+                    <th class="price">Preço</th>
+                  </tr>
+                </thead>
+                <tbody id="itensComprados">
+
+                </tbody>
+              </table>
+            </div>
+            <div class="
+                    checkout-coupon-total checkout-coupon-total-2
+                    d-flex
+                    flex-wrap
+                  ">
+              <div class="checkout-coupon">
+                <form>
+                  <div class="single-form form-default d-flex">
+                    <div class="form-input form">
+                      <input type="text" id="codigoDesconto" placeholder="Código de Desconto">
+                    </div>
+                    <button type="button" class="main-btn primary-btn" id="desconto">Aplicar</button>
+                  </div>
+                </form>
+              </div>
+              <div class="checkout-coupon">
+                <form>
+                  <div class="single-form form-default d-flex">
+                    <div class="form-input form">
+                      <select class="form-input form" id="comboCamareiras">
+                        <option value="" hidden>Camareira</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="d-block my-3">
+                      <div class="custom-control custom-radio">
+                          <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                          <label class="custom-control-label" for="credit">Cartão de Crédito</label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                          <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                          <label class="custom-control-label" for="debit">Cartão de Débito</label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                          <input id="dinheiro" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                          <label class="custom-control-label" for="dinheiro">Dinheiro</label>
+                      </div>
+                      <div class="custom-control">
+                        <select id="bandeiras">
+                          <option hidden>Selecione</option>
+                        </select>
+                      </div>
+                  </div>
+                  
+                </form>
+              </div>
+              <!-- Valores -->
+              <div class="checkout-total">
+                <div class="single-total">
+                  <p class="value">Valor Quarto:</p>
+                  <p class="price">+ R$ <span id="valorQuarto">0</span></p>
+                </div>
+                <div class="single-total">
+                  <p class="value">Permanência:</p>
+                  <p class="price"><span id="tempoPermanencia">0</span></p>
+                </div>
+                <div class="single-total">
+                  <p class="value">Adicional Permanência:</p>
+                  <p class="price">+ R$ <span id="addPermanencia">0</span></p>
+                </div>
+                <div class="single-total">
+                  <p class="value">Valor Itens:</p>
+                  <p class="price">+ R$ <span id="valorItens">0</span></p>
+                </div>
+                <div class="single-total">
+                  <p class="value">Descontos:</p>
+                  <p class="price">- R$ <span id="valorDesconto">0</span></p>
+                </div>
+                <div class="single-total total-payable">
+                  <p class="value">Total:</p>
+                  <p class="price">R$ <span id="totalGeral">0</span></p>
+                </div>
+              </div>
+            </div>
+            <div class="checkout-btn d-sm-flex justify-content-between">
+              <div class="single-btn">
+                <a href="https://demo.ecommercehtml.com/checkout.html#" class="main-btn primary-btn-border"
+                  hidden>continue shopping</a>
+              </div>
+              <div class="single-btn">
+                <a class="main-btn primary-btn" id="finalizar">Finalizar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+<!-- JQuery -->
+<script src="../paginas_js/jquery.js"></script>
+<!-- Pagamento -->
+<script src="../paginas_js/checkout.js"></script>
+<!-- Validação -->
+<script src="../paginas_js/validacao.js"></script>
+<!-- Camareira -->
+<script src="../ajaxs/getCamareira.js"></script>
+<!-- Encerrar -->
+<script type="module" src="../botoes/botaoFinalizar.js"></script>
+
+<script src="../botoes/botaoPagamento.js"></script>
+</html>

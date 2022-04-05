@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poco | Relatórios</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div id="accordion">
+      <!-- Cabeçalho -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a id="urlRelatoriosCaixa" href="#">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Relatórios</li>
+        </ol>
+      </nav>
+      <div class="card">
+        <div class="card-header" id="headingCabecalho">
+          <h5 class="mb-0">
+            <button
+              class="btn btn-link"
+              data-toggle="collapse"
+              data-target="#collapseCabecalho"
+              aria-expanded="true"
+              aria-controls="collapseCabecalho"
+            >
+              <h1>Relatórios</h1>
+            </button>
+          </h5>
+        </div>
+
+        <div
+          id="collapseCabecalho"
+          class="collapse show"
+          aria-labelledby="headingCabecalho"
+          data-parent="#accordion"
+        >
+          <div class="card-body">
+            Todos os Relatórios produzidos pelo sistema estão aqui!
+          </div>
+        </div>
+      </div>
+
+      <!-- Relatório de Quartos -->
+      <div class="card" id="cardQuartos">
+        <div class="card-header" id="headingLQ">
+          <h5 class="mb-0">
+            <button
+              class="btn btn-link collapsed"
+              data-toggle="collapse"
+              data-target="#collapseLQ"
+              aria-expanded="false"
+              aria-controls="collapseLQ"
+            >
+              Relatório de Quartos
+            </button>
+          </h5>
+        </div>
+
+        <div
+          id="collapseLQ"
+          class="collapse"
+          aria-labelledby="headingLQ"
+          data-parent="#accordion"
+        >
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Código</th>
+                    <th>Número</th>
+                    <th>Qtd Horas Locação</th>
+                    <th>Valor Locação</th>
+                    <th>Tempo Especial</th>
+                    <th>Valor Especial</th>
+                    <th>Qtd Horas Diária</th>
+                    <th>Valor Diária</th>
+                    <th>Tempo Adicional</th>
+                    <th>Valor Hora Adioional</th>
+                    <th>Tolerância</th>
+                    <th>Suíte</th>
+                    <th>Tabela</th>
+                    <th>Percentual</th>
+                    <th>Valor 1ª Hora</th>
+                    <th>Valor 2ª Hora</th>
+                    <th>Valor 3ª Hora</th>
+                    <th>Valor 4ª Hora</th>
+                    <th>Valor 5ª Hora</th>
+                    <th>Valor 6ª Hora</th>
+                  </tr>
+                </thead>
+                <tbody id="tabelaQuartos"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Relatório de Produtos-->
+      <div class="card">
+        <div class="card-header" id="headingLP">
+          <h5 class="mb-0">
+            <button
+              class="btn btn-link collapsed"
+              data-toggle="collapse"
+              data-target="#collapseLP"
+              aria-expanded="false"
+              aria-controls="collapseLP"
+            >
+              Relatório de Produtos
+            </button>
+          </h5>
+        </div>
+
+        <div
+          id="collapseLP"
+          class="collapse"
+          aria-labelledby="headingLP"
+          data-parent="#accordion"
+        >
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Código</th>
+                    <th>Descrição</th>
+                    <th>Valor Unt</th>
+                    <th>Quantidade</th>
+                    <th>Categoria</th>
+                    <th>Data Compra</th>
+                  </tr>
+                </thead>
+                <tbody id="tabelaProdutos"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Relatório de Ocupações -->
+      <div class="card" id="cardOcupacoes">
+        <div class="card-header" id="headingRO">
+          <h5 class="mb-0">
+            <button
+              class="btn btn-link"
+              data-toggle="collapse"
+              data-target="#collapseRO"
+              aria-expanded="false"
+              aria-controls="collapseRO"
+            >
+              Relatório de Ocupações
+            </button>
+          </h5>
+        </div>
+
+        <div
+          id="collapseRO"
+          class="collapse"
+          aria-labelledby="headingRO"
+          data-parent="#accordion"
+        >
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Data</th>
+                    <th>Código</th>
+                    <th>Quarto</th>
+                    <th>Entrada</th>
+                    <th>Saída</th>
+                    <th>Total</th>
+                    <th>Tipo</th>
+                  </tr>
+                </thead>
+                <tbody id="tabelaOcupacoes"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Relatório de Saída de Produtos -->
+      <div class="card" id="cardSaida">
+        <div class="card-header" id="headingRSP">
+          <h5 class="mb-0">
+            <button
+              class="btn btn-link"
+              data-toggle="collapse"
+              data-target="#collapseRSP"
+              aria-expanded="false"
+              aria-controls="collapseRSP"
+            >
+              Relatório de Saída de Produtos
+            </button>
+          </h5>
+        </div>
+        <div
+          id="collapseRSP"
+          class="collapse"
+          aria-labelledby="headingRSP"
+          data-parent="#accordion"
+        >
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Data</th>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Valor</th>
+                  </tr>
+                </thead>
+                <tbody id="tabelaSaida"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Histórioco de Caixa -->
+      <div class="card" id="cardHistoricoCaixa">
+        <div class="card-header" id="headingHC">
+          <h5 class="mb-0">
+            <button
+              class="btn btn-link collapsed"
+              data-toggle="collapse"
+              data-target="#collapseHC"
+              aria-expanded="false"
+              aria-controls="collapseHC"
+            >
+                Histórioco de Caixa
+            </button>
+          </h5>
+        </div>
+
+        <div
+          id="collapseHC"
+          class="collapse"
+          aria-labelledby="headingHC"
+          data-parent="#accordion"
+        >
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Data</th>
+                    <th>Abertura</th>
+                    <th>Usuário</th>
+                    <th>Fundo de Caixa</th>
+                    <th>Total</th>
+                    <th>Fechamento</th>
+                  </tr>
+                </thead>
+                <tbody id="tabelaHistoricoCaixa"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <!-- JQuery -->
+  <script src="../paginas_js/jquery.js"></script>
+  <!-- Popper Min -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"
+  ></script>
+  <!-- Bootstrap 4 -->
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
+  <!-- Validação Login -->
+  <script src="../paginas_js/validacao.js"></script>
+  <!-- Relatório -->
+  <script type="module" src="../ajaxs/getRelatorios.js"></script>
+  <!-- Bloqueador de Permissões -->
+  <script src="../paginas_js/blockCaixa.js"></script>
+
+  <script src="../paginas_js/sitePath.js"></script>
+</html>

@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poco | Cadastros</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  </head>
+
+  <body>
+    <div id="accordion">
+      <!-- Cabeçalho -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a id="urlCadastrosCaixa" href="#">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Cadastros</li>
+        </ol>
+      </nav>
+      <div class="card">
+        <div class="card-header" id="headingCabecalho">
+          <h5 class="mb-0">
+            <button
+              class="btn btn-link"
+              data-toggle="collapse"
+              data-target="#collapseCabecalho"
+              aria-expanded="true"
+              aria-controls="collapseCabecalho"
+            >
+              <h1>Cadastros</h1>
+            </button>
+          </h5>
+        </div>
+
+        <div
+          id="collapseCabecalho"
+          class="collapse show"
+          aria-labelledby="headingCabecalho"
+          data-parent="#accordion"
+        >
+          <div class="card-body">
+            Todos os cadastros necessários para o sistema estão aqui!
+          </div>
+        </div>
+      </div>
+
+      <!-- Cadastro de Quartos -->
+      <div class="card" id="cardCadastroQuarto">
+        <div class="card-header" id="headingQuartos">
+          <h5 class="mb-0">
+            <button
+              class="btn btn-link collapsed"
+              data-toggle="collapse"
+              data-target="#collapseQuartos"
+              aria-expanded="false"
+              aria-controls="collapseQuartos"
+            >
+              Cadastro de Quartos
+            </button>
+          </h5>
+        </div>
+
+        <div
+          id="collapseQuartos"
+          class="collapse"
+          aria-labelledby="headingQuartos"
+          data-parent="#accordion"
+        >
+          <div class="card-body">
+            <form id="formPostQuarto">
+              <div class="row">
+                <div class="col">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="codigoQuarto"
+                    placeholder="Código do Quarto"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="numeroQuarto"
+                    placeholder="Número do Quarto"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="horasLocacao"
+                    placeholder="Qtd Horas Locação"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="valorLocacao"
+                    placeholder="Valor Locação"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="tempoEspecial"
+                    placeholder="Tempo Especial"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="valorEspecial"
+                    placeholder="Valor Especial"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="horasDiarias"
+                    placeholder="Qtd Horas Diária"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="valorDiaria"
+                    placeholder="Valor Diária"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="tempoAdicional"
+                    placeholder="Tempo Adicional (Minutos)"
+                  />
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="gridCheck"
+                    value="Percentural"
+                  />
+                  <label class="forme-check-label" for="gridCheck">
+                    Adicional em Percentual
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="valorHoraAdicional"
+                    placeholder="Valor Hora Adicional"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="tolerancia"
+                    placeholder="Tolerância (Minutos)"
+                  />
+                  <div>
+                    <div class="box">
+                      <select id="suite" class="form-controle">
+                        <option hidden>Tipo Suíte</option>
+                        <option>Ventilador</option>
+                        <option>Ar</option>
+                      </select>
+                    </div>
+                    <div class="box">
+                      <select id="tabela" class="form-controle">
+                        <option hidden>Tabela</option>
+                        <option>Fixo</option>
+                        <option>Por Hora</option>
+                        <option>Diária</option>
+                      </select>
+                    </div>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="valor1hora"
+                    placeholder="Valor 1ª Hora"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="valor2hora"
+                    placeholder="Valor 2ª Hora"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="valor3hora"
+                    placeholder="Valor 3ª Hora"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="valor4hora"
+                    placeholder="Valor 4ª Hora"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="valor5hora"
+                    placeholder="Valor 5ª Hora"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="valor6hora"
+                    placeholder="Valor 6ª Hora"
+                  />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <input
+                    type="button"
+                    class="btn btn-success"
+                    id="salvarFormPostQuarto"
+                    value="Salvar"
+                  />
+                  <input
+                    type="button"
+                    class="btn btn-danger"
+                    id="limparFormPostQuarto"
+                    value="Limpar"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cadastro de Produtos -->
+      <div class="card" id="cardCadastroProduto">
+        <div class="card-header" id="headingProdutos">
+          <h5 class="mb-0">
+            <button
+              class="btn btn-link collapsed"
+              data-toggle="collapse"
+              data-target="#collapseProdutos"
+              aria-expanded="false"
+              aria-controls="collapseProdutos"
+            >
+              Cadastro de Produtos
+            </button>
+          </h5>
+        </div>
+
+        <div
+          id="collapseProdutos"
+          class="collapse"
+          aria-labelledby="headingProdutos"
+          data-parent="#accordion"
+        >
+          <div class="card-body">
+            <form id="formPostProduto">
+              <div class="row">
+                <div class="col">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="codigo"
+                    placeholder="Código"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="descricao"
+                    placeholder="Descrição"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="valor"
+                    placeholder="Valor Unitário"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="quantidade"
+                    placeholder="Quantidade"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="categoria"
+                    placeholder="Categoria"
+                  />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <input
+                    type="button"
+                    class="btn btn-success"
+                    id="salvarFormPostProduto"
+                    value="Salvar"
+                  />
+                  <input
+                    type="button"
+                    class="btn btn-danger"
+                    id="limparFormPostProduto"
+                    value="Limpar"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cadastro Informações Gerais -->
+      <div class="card" id="cardCadastroIg">
+        <div class="card-header" id="headingIG">
+          <h5 class="mb-0">
+            <button
+              class="btn btn-link"
+              data-toggle="collapse"
+              data-target="#collapseIG"
+              aria-expanded="false"
+              aria-controls="collapseIG"
+            >
+              Cadastro Informações Gerais
+            </button>
+          </h5>
+        </div>
+
+        <div
+          id="collapseIG"
+          class="collapse"
+          aria-labelledby="headingIG"
+          data-parent="#accordion"
+        >
+          <div class="card-body">
+            <form id="formPostIG">
+              <div class="row">
+                <div class="col">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="social"
+                    placeholder="Razão Social"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="fantasia"
+                    placeholder="Nome Fantasia"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cnpj"
+                    placeholder="CNPJ"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cidade"
+                    placeholder="Cidade"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="endereco"
+                    placeholder="Endereço"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="numero"
+                    placeholder="Número"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="bairro"
+                    placeholder="Bairro"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="telefone"
+                    placeholder="Telefone"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="telefone2"
+                    placeholder="Telefone 2"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="telefone3"
+                    placeholder="Telefone 3"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <input
+                    type="button"
+                    class="btn btn-success"
+                    id="salvarFormPostIg"
+                    value="Salvar"
+                  />
+                  <input
+                    type="button"
+                    class="btn btn-danger"
+                    id="limparFormPostIg"
+                    value="Limpar"
+                  />
+                  <input
+                  type="button"
+                  class="btn btn-warning"
+                  id="alteraFormPostIg"
+                  value="Baixar Dados"
+                />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cadastro Email -->
+      <div class="card" id="cardCadastroEmail">
+        <div class="card-header" id="headingEmail">
+          <h5 class="mb-0">
+            <button
+              class="btn btn-link"
+              data-toggle="collapse"
+              data-target="#collapseEmail"
+              aria-expanded="false"
+              aria-controls="collapseEmail"
+            >
+              Cadastro Email
+            </button>
+          </h5>
+        </div>
+
+        <div
+          id="collapseEmail"
+          class="collapse"
+          aria-labelledby="headingEmail"
+          data-parent="#accordion"
+        >
+          <div class="card-body">
+            <form id="formPostEmail">
+              <div class="row">
+                <div class="col">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="usuario"
+                    placeholder="Usuário"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="senha"
+                    placeholder="Senha"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="smtp"
+                    placeholder="SMTP"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="porta"
+                    placeholder="Porta"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="timeout"
+                    placeholder="Timeout (seg)"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="destino"
+                    placeholder="Email Destino"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="contabilidade"
+                    placeholder="Email Contabilidade"
+                  />
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="gridCheck"
+                    value="True"
+                  />
+                  <label class="forme-check-label" for="gridCheck">
+                    Requer Autenticação
+                  </label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <input
+                    type="button"
+                    class="btn btn-success"
+                    id="salvarFormPostEmail"
+                    value="Salvar"
+                  />
+                  <input
+                    type="button"
+                    class="btn btn-danger"
+                    id="limparFormPostEmail"
+                    value="Limpar"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cadastro de Camareiras -->
+      <div class="card" id="cardCadastroCamareira">
+        <div class="card-header" id="headingCamareiras">
+          <h5 class="mb-0">
+            <button
+              class="btn btn-link collapsed"
+              data-toggle="collapse"
+              data-target="#collapseCamareiras"
+              aria-expanded="false"
+              aria-controls="collapseCamareiras"
+            >
+              Cadastro de Camareiras
+            </button>
+          </h5>
+        </div>
+
+        <div
+          id="collapseCamareiras"
+          class="collapse"
+          aria-labelledby="headingCamareiras"
+          data-parent="#accordion"
+        >
+          <div class="card-body">
+            <form id="formPostCamareira">
+              <div class="row">
+                <div class="col">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="camareira"
+                    placeholder="Camareiras"
+                  />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <input
+                    type="button"
+                    class="btn btn-success"
+                    id="salvarFormPostCamareira"
+                    value="Salvar"
+                  />
+                  <input
+                    type="button"
+                    class="btn btn-danger"
+                    id="limparFormPostCamareira"
+                    value="Limpar"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Configurações -->
+      <div class="card" id="cardCadastroPernoite">
+        <div class="card-header" id="headingConfig">
+          <h5 class="mb-0">
+            <button
+              class="btn btn-link collapsed"
+              data-toggle="collapse"
+              data-target="#collapseConfig"
+              aria-expanded="false"
+              aria-controls="collapseConfig"
+            >
+              Configurações
+            </button>
+          </h5>
+        </div>
+
+        <div
+          id="collapseConfig"
+          class="collapse"
+          aria-labelledby="headingConfig"
+          data-parent="#accordion"
+        >
+          <div class="card-body">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Camareiras"
+                  />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <input type="button" class="btn btn-success" value="Salvar" />
+                </div>
+                <div class="col">
+                  <input type="button" class="btn btn-danger" value="Excluir" />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="../paginas_js/jquery.js"></script>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
+
+  <script src="../paginas_js/validacao.js"></script>
+  <script src="../ajaxs/postProduto.js"></script>
+  <script src="../ajaxs/postCamareira.js"></script>
+  <script src="../ajaxs/postIG.js"></script>
+  <script src="../ajaxs/postQuarto.js"></script>
+
+  <script type="module" src="../boxes/box.js"></script>
+
+  <script src="../ajaxs/putIg.js"></script>
+
+  <script src="../paginas_js/blockCaixa.js"></script>
+
+  <script src="../paginas_js/sitePath.js"></script>
+</html>

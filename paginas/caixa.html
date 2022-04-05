@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poco | Caixa</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  </head>
+
+  <body>
+    <div id="accordion">
+      <!-- Cabeçalho -->
+      <div class="card">
+        <div class="card-header" id="headingCabecalho">
+          <h5 class="mb-0">
+            <button
+              class="btn btn-link"
+              data-toggle="collapse"
+              data-target="#collapseCabecalho"
+              aria-expanded="true"
+              aria-controls="collapseCabecalho"
+            >
+              <h1>Caixa</h1>
+            </button>
+          </h5>
+        </div>
+      </div>
+
+      <!-- Abertura / Fechamento -->
+      <div class="card">
+        <div class="card-header" id="headingCamareiras">
+          <h5 class="mb-0">
+            <button
+              class="btn btn-link collapsed"
+              data-toggle="collapse"
+              data-target="#collapseCamareiras"
+              aria-expanded="false"
+              aria-controls="collapseCamareiras"
+            >
+              Abrir / Fechar
+            </button>
+          </h5>
+        </div>
+
+        <div
+          id="collapseCamareiras"
+          class="collapse"
+          aria-labelledby="headingCamareiras"
+          data-parent="#accordion"
+        >
+          <div class="card-body">
+            <form id="formPostCamareira">
+              <div class="row">
+                <div class="col">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="usuario"
+                    placeholder="Usuário"
+                    disabled
+                  />
+                  <label for="">Fundo de Caixa</label>
+                  <input type="checkbox" name="" id="usarFundoCaixa">
+                  <input type="text" class="form-control" id="valorFundoCaixa" placeholder="Valor do Fundo de Caixa">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <input
+                    type="button"
+                    class="btn btn-success"
+                    id="abrirCaixa"
+                    value="Abrir Caixa" disabled
+                  />
+                  <input
+                    type="button"
+                    class="btn btn-danger"
+                    id="fecharCaixa"
+                    value="Encerrar Caixa"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Histórioco de Caixa -->
+      <div class="card">
+        <div class="card-header" id="headingLQ">
+          <h5 class="mb-0">
+            <button
+              class="btn btn-link collapsed"
+              data-toggle="collapse"
+              data-target="#collapseLQ"
+              aria-expanded="false"
+              aria-controls="collapseLQ"
+            >
+                Histórioco de Caixa
+            </button>
+          </h5>
+        </div>
+
+        <div
+          id="collapseLQ"
+          class="collapse"
+          aria-labelledby="headingLQ"
+          data-parent="#accordion"
+        >
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Data</th>
+                    <th>Abertura</th>
+                    <th>Usuário</th>
+                    <th>Fundo de Caixa</th>
+                    <th>Total</th>
+                    <th>Fechamento</th>
+                  </tr>
+                </thead>
+                <tbody id="tabelaHistoricoCaixa"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </body>
+
+  <script src="../paginas_js/jquery.js"></script>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
+
+  <script src="../paginas_js/validacao.js"></script>
+
+  <script src="../botoes/botaoCaixa.js"></script>
+
+  <script src="../ajaxs/getCaixa.js"></script>
+
+</html>
