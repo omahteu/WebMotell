@@ -428,45 +428,6 @@ select:focus {
 }
 
 /*==================================================================
-                          02.Page Banner css
-==================================================================*/
-/*=====  Page Banner Style =====*/
-.page-banner {
-  background-color: #542DED;
-  padding-top: 40px;
-  padding-bottom: 45px;
-}
-
-.page-banner-content .sub-title {
-  font-weight: 500;
-  font-size: 44px;
-  line-height: 55px;
-  color: #fff;
-}
-
-@media (max-width: 767px) {
-  .page-banner-content .sub-title {
-    font-size: 24px;
-    line-height: 28px;
-  }
-}
-
-.page-banner-content .page-title {
-  font-weight: 500;
-  font-size: 60px;
-  line-height: 60px;
-  color: #fff;
-  margin-top: 10px;
-}
-
-@media (max-width: 767px) {
-  .page-banner-content .page-title {
-    font-size: 30px;
-    line-height: 35px;
-  }
-}
-
-/*==================================================================
                           03.Colors css
 ==================================================================*/
 /*========== White Color =========*/
@@ -20249,6 +20210,15 @@ select:focus {
   margin-top: 8px;
   margin-right: 8px;
   display: contents;
+}
+
+@media (max-width: 767px) {
+  .checkout-style-1 .checkout-coupon-total .checkout-coupon .single-form .form-input {
+    width: auto;
+    margin-top: 8px;
+    margin-right: 8px;
+    display: block;
+  }
 }
 
 .checkout-style-1 .checkout-coupon-total .checkout-coupon .single-form .main-btn {
