@@ -20248,10 +20248,11 @@ select:focus {
   width: 194px;
   margin-top: 8px;
   margin-right: 8px;
+  display: contents;
 }
 
 .checkout-style-1 .checkout-coupon-total .checkout-coupon .single-form .main-btn {
-  margin-top: 8px;
+  margin-top: 0px;
 }
 
 .checkout-style-1 .checkout-coupon-total .checkout-total {
@@ -36265,4 +36266,14 @@ select:focus {
 
 #bandeiras {
   display: none;
+}
+
+#addProdutos {
+  width: 140px;
+  margin-right: 5px;
+}
+
+#codigoDesconto {
+  width: 180px;
+  margin-right: 5px;
 }
