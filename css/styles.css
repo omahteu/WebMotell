@@ -36249,7 +36249,7 @@ select:focus {
 }
 
 @media (max-width: 767px) {
-  #codigoDesconto {
+  #addProdutos {
     width: 300px;
     margin-right: 5px;
   }
