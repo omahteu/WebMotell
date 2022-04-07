@@ -20225,6 +20225,12 @@ select:focus {
   margin-top: 0px;
 }
 
+@media (max-width: 767px) {
+  .checkout-style-1 .checkout-coupon-total .checkout-coupon .single-form .main-btn {
+    margin-top: 50x;
+  }
+}
+
 .checkout-style-1 .checkout-coupon-total .checkout-total {
   width: 50%;
   border-left: 1px solid #F2F2F2;
