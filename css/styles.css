@@ -36247,3 +36247,10 @@ select:focus {
   width: 180px;
   margin-right: 5px;
 }
+
+@media (max-width: 767px) {
+  #codigoDesconto {
+    width: 300px;
+    margin-right: 5px;
+  }
+}
