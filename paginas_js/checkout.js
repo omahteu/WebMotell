@@ -21,6 +21,7 @@ function informacaoes(){
 
 			dados.forEach(elemento => {
 
+				var id = elemento.id
 				var descricao =  elemento.descricao
 				var quantidade =  elemento.quantidade
 				var valor_total = elemento.valor_total
@@ -42,7 +43,7 @@ function informacaoes(){
 											'<td>'+
 												'<p class="price" id="total">' + valor_total + '</p>'+
 											'</td>'+
-											'<td><button onclick="removeProduto("id")" class="btn btn-danger">Remover</button></td>'+
+											'<td><button onclick="removeProduto(' + removeItens(id)  + ')" class="btn btn-danger">Remover</button></td>'+
 										'</tr>';
 			});
 		} catch (error) {
