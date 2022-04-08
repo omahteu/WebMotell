@@ -8,28 +8,24 @@ function informacaoes(){
 
 	$.get("https://defmoteapi.herokuapp.com/comanda/", function(retorno){
 
+		var sum = 0
+		var valor_quarto
+
 		var adicionalQuarto = JSON.parse(localStorage.getItem('dadosQuarto'))
-
-		//let numero = adicionalQuarto[0].numero
-		//let valor = adicionalQuarto[0].valor
 		let tempo = adicionalQuarto[0].tempo
-		
-
 	    var prateleira = document.getElementById('itensComprados');
 		prateleira.innerHTML = '';
 
 		try {
 			var dados = retorno.filter(quartos => quartos.quarto == numero_quarto)
 
-			for(var i = 0; i < dados.length; i++){
-	
-				//var quarto = dados[i].quarto
-				var descricao =  dados[i].descricao
-				var quantidade =  dados[i].quantidade
-				var valor_total = dados[i].valor_total
-				var valor_unitario = dados[i].valor_unitario
-				//var datahora = dados[i].datahora
-				var valor_quarto = dados[i].valor_quarto
+			dados.forEach(elemento => {
+
+				var descricao =  elemento.descricao
+				var quantidade =  elemento.quantidade
+				var valor_total = elemento.valor_total
+				var valor_unitario = elemento.valor_unitario
+				valor_quarto = elemento.valor_quarto
 
 				prateleira.innerHTML += '<tr>'+
 											'<td>'+
@@ -48,24 +44,24 @@ function informacaoes(){
 											'</td>'+
 											'<td><button onclick="removeProduto("id")" class="btn btn-danger">Remover</button></td>'+
 										'</tr>';
-			}
+			});
 		} catch (error) {
 			localStorage.setItem('produtos', JSON.stringify([]))
 		}
 
-		var totais = $("[id=total]").text()
+		
 
-		var arraytotal = totais.split('R$')
-	
-		var arraySemVazios = arraytotal.filter(function (i) {
+		var precoProdutos = $("[id=total]").text()
+		var somaPrecoProdutos = precoProdutos.split('R$')
+
+		var totalPrecoProdutos = somaPrecoProdutos.filter(function (i) {
 			return i;
 		});
-		
-		var sum = 0
-	
-		for(var a = 0; a < arraySemVazios.length; a++){
-			sum += parseFloat(arraySemVazios[a])
+
+		for(var a = 0; a < totalPrecoProdutos.length; a++){
+			sum += parseFloat(totalPrecoProdutos[a])
 		}
+
 
 		$("#valorItens").text(sum)
 		$("#valorQuarto").text(valor_quarto)
@@ -73,8 +69,9 @@ function informacaoes(){
 		
 		var ttgeral = Number(valor_quarto) + Number(sum)
 
-		$("#totalGeral").text(ttgeral)
+		console.log(ttgeral)
 
+		$("#totalGeral").text(ttgeral)
 		$("#desconto").click(function(){
 			
 			var codigoDeconto = $("#codigoDesconto").val()
@@ -86,6 +83,27 @@ function informacaoes(){
 			
 		})
 	})
+}
+
+function removeItens(operacao){
+	motivo = prompt('Motivo da retirada do produto:')
+
+	if (motivo == null){
+		alert('Produto não excluido!\nÉ necessário o motivo da exclusão do produto!')
+	} else if (motivo.length == 0){
+		alert('Produto não excluido!\nÉ necessário o motivo da exclusão do produto!')
+	} else {
+		// Requisição DELETE
+		$.ajax({
+			url: "https://defmoteapi.herokuapp.com/comanda/" + operacao,
+			method: 'DELETE',
+			dataType: 'json',
+			success: function(data){
+				alert('Produto Excluído!')
+				mostraProduto();
+			}
+		})
+	}
 }
 
 function getValores(){
