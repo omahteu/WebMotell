@@ -46,6 +46,7 @@ function informacaoes(){
 											'<td>'+
 												'<p class="price" id="total">' + valor_total + '</p>'+
 											'</td>'+
+											'<td><button onclick="removeProduto("id")" class="btn btn-danger">Remover</button></td>'+
 										'</tr>';
 			}
 		} catch (error) {
