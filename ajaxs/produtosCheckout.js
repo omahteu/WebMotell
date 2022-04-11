@@ -75,6 +75,7 @@ $("#addLista").click(function(){
 
 		// Exibe os Produtos
 		exibirProduto();
+        window.location.reload()
     })
 })
 
@@ -119,7 +120,7 @@ function exibirProduto(){
                                         '<td>'+
                                             '<p class="price" id="total">' + valor_total + '</p>'+
                                         '</td>'+
-                                        '<td><button onclick="removeProduto(' + removeItens(id)  + ')" class="btn btn-danger" id="removeritens">Remover</button></td>'+
+                                        '<td><button onclick="removeProduto(' + id  + ')" class="btn btn-danger" id="removeritens">Remover</button></td>'+
                                     '</tr>';
 		})
 	})

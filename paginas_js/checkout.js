@@ -45,6 +45,8 @@ function informacaoes(){
 											'</td>'+
 											'<td><button onclick="removeItens(' + id  + ')" class="btn btn-danger">Remover</button></td>'+
 										'</tr>';
+				
+				informacaoes()
 			});
 		} catch (error) {
 			localStorage.setItem('produtos', JSON.stringify([]))
@@ -97,14 +99,10 @@ function removeItens(operacao){
 			dataType: 'json',
 			success: function(data){
 				alert('Produto Excluído!')
-				mostraProduto();
+				informacaoes();
 			}
 		})
 	}
-}
-
-function mostraItens(){
-	
 }
 
 function getValores(){
