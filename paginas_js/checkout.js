@@ -43,14 +43,12 @@ function informacaoes(){
 											'<td>'+
 												'<p class="price" id="total">' + valor_total + '</p>'+
 											'</td>'+
-											'<td><button onclick="removeProduto(' + removeItens(id)  + ')" class="btn btn-danger">Remover</button></td>'+
+											'<td><button onclick="removeItens(' + id  + ')" class="btn btn-danger">Remover</button></td>'+
 										'</tr>';
 			});
 		} catch (error) {
 			localStorage.setItem('produtos', JSON.stringify([]))
 		}
-
-		
 
 		var precoProdutos = $("[id=total]").text()
 		var somaPrecoProdutos = precoProdutos.split('R$')
@@ -103,6 +101,10 @@ function removeItens(operacao){
 			}
 		})
 	}
+}
+
+function mostraItens(){
+	
 }
 
 function getValores(){

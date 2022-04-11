@@ -119,7 +119,7 @@ function exibirProduto(){
                                         '<td>'+
                                             '<p class="price" id="total">' + valor_total + '</p>'+
                                         '</td>'+
-                                        '<td><button onclick="removeProduto(' + removeItens(id)  + ')" class="btn btn-danger">Remover</button></td>'+
+                                        '<td><button onclick="removeProduto(' + removeItens(id)  + ')" class="btn btn-danger" id="removeritens">Remover</button></td>'+
                                     '</tr>';
 		})
 	})
