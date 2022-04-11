@@ -28,13 +28,15 @@
                   <form>
                     <div class="single-form form-default d-flex">
                       <div class="form-input form">
-                        <input type="text" id="addProdutos" placeholder="Pessoas">
-                        <input type="text" id="addProdutos" placeholder="Código">
-                        <input type="text" id="addProdutos" placeholder="Produtos">
-                        <input type="text" id="addProdutos" placeholder="Quantidade">
-                        <input type="text" id="addProdutos" placeholder="Descrição">
-                        <input type="text" id="addProdutos" placeholder="Valor Unitário">
-                        <input type="text" id="addProdutos" placeholder="Total">
+                        <input type="text" id="addProdutos" class="pessoasCheckout" placeholder="Pessoas">
+                        <input type="text" id="addProdutos" class="codigoCheckout" placeholder="Código">
+                        <select class="" id="listaCheckout">
+                          <option hidden>Produtos</option>
+                        </select>
+                        <input type="text" id="addProdutos" class="quantidadeCheckout" placeholder="Quantidade">
+                        <input type="text" id="addProdutos" class="descricaoCheckout" placeholder="Descrição">
+                        <input type="text" id="addProdutos" class="unitarioCheckout" placeholder="Valor Unitário">
+                        <input type="text" id="addProdutos" class="totalCheckout" placeholder="Total">
                       </div>
                       <button type="button" class="main-btn primary-btn" id="addLista">+</button>
                     </div>
@@ -161,4 +163,6 @@
 <script type="module" src="../botoes/botaoFinalizar.js"></script>
 
 <script src="../botoes/botaoPagamento.js"></script>
+
+<script src="../ajaxs/produtosCheckout.js"></script>r
 </html>

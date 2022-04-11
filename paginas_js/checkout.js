@@ -70,8 +70,6 @@ function informacaoes(){
 		
 		var ttgeral = Number(valor_quarto) + Number(sum)
 
-		console.log(ttgeral)
-
 		$("#totalGeral").text(ttgeral)
 		$("#desconto").click(function(){
 			
