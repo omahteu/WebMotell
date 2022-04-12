@@ -1,9 +1,11 @@
 $(document).ready(function(){
+	
 	informacaoes()
 })
 
 function informacaoes(){
 
+	console.log('iniciandp')
 	var numero_quarto = JSON.parse(sessionStorage.getItem('quarto'))
 
 	$.get("https://defmoteapi.herokuapp.com/comanda/", function(retorno){
@@ -19,6 +21,8 @@ function informacaoes(){
 		try {
 			var dados = retorno.filter(quartos => quartos.quarto == numero_quarto)
 
+			console.log(dados)
+
 			dados.forEach(elemento => {
 
 				var id = elemento.id
@@ -27,6 +31,7 @@ function informacaoes(){
 				var valor_total = elemento.valor_total
 				var valor_unitario = elemento.valor_unitario
 				valor_quarto = elemento.valor_quarto
+				console.log(valor_quarto)
 
 				prateleira.innerHTML += '<tr>'+
 											'<td>'+
@@ -45,8 +50,6 @@ function informacaoes(){
 											'</td>'+
 											'<td><button onclick="removeItens(' + id  + ')" class="btn btn-danger">Remover</button></td>'+
 										'</tr>';
-				
-				informacaoes()
 			});
 		} catch (error) {
 			localStorage.setItem('produtos', JSON.stringify([]))
@@ -63,6 +66,7 @@ function informacaoes(){
 			sum += parseFloat(totalPrecoProdutos[a])
 		}
 
+		console.log(valor_quarto)
 
 		$("#valorItens").text(sum)
 		$("#valorQuarto").text(valor_quarto)

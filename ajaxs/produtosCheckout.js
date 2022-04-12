@@ -27,6 +27,12 @@ $(document).ready(function(){
 })
 })
 
+
+
+
+
+
+
 function produtoCodigo(){
 
     $('.codProduto').keypress( (event) => {
@@ -74,8 +80,9 @@ $("#addLista").click(function(){
     $.post("https://defmoteapi.herokuapp.com/comanda/", produto, function(msg){
 
 		// Exibe os Produtos
-		exibirProduto();
-        window.location.reload()
+		//exibirProduto();
+        calcular()
+        //window.location.reload()
     })
 })
 
@@ -122,6 +129,91 @@ function exibirProduto(){
                                         '</td>'+
                                         '<td><button onclick="removeProduto(' + id  + ')" class="btn btn-danger" id="removeritens">Remover</button></td>'+
                                     '</tr>';
+		})
+	})
+}
+
+function calcular(){
+
+    console.log('iniciando2')
+    var nql = []
+    var numero_quarto = JSON.parse(sessionStorage.getItem('quarto'))
+
+	$.get("https://defmoteapi.herokuapp.com/comanda/", function(retorno){
+
+		var sum = 0
+		var valor_quarto
+
+		var adicionalQuarto = JSON.parse(localStorage.getItem('dadosQuarto'))
+		let tempo = adicionalQuarto[0].tempo
+	    var prateleira = document.getElementById('itensComprados');
+		prateleira.innerHTML = '';
+
+		try {
+			var dados = retorno.filter(quartos => quartos.quarto == numero_quarto)
+
+			dados.forEach(elemento => {
+
+				var id = elemento.id
+				var descricao =  elemento.descricao
+				var quantidade =  elemento.quantidade
+				var valor_total = elemento.valor_total
+				var valor_unitario = elemento.valor_unitario
+				valor_quarto = elemento.valor_quarto
+                
+                nql.push(valor_quarto)
+
+				prateleira.innerHTML += '<tr>'+
+											'<td>'+
+												'<div class="product-cart d-flex">'+
+													'<div class="product-content media-body">'+
+														'<h5 class="title">' + descricao + '</h5>'+
+														'<span>Unidade Custa R$ ' + valor_unitario + '</span>'+
+													'</div>'+
+												'</div>'+
+											'</td>'+
+											'<td>'+
+												'<p>' + quantidade + '</p>'+
+											'</td>'+
+											'<td>'+
+												'<p class="price" id="total">' + valor_total + '</p>'+
+											'</td>'+
+											'<td><button onclick="removeItens(' + id  + ')" class="btn btn-danger">Remover</button></td>'+
+										'</tr>';
+			});
+		} catch (error) {
+			localStorage.setItem('produtos', JSON.stringify([]))
+		}
+
+		var precoProdutos = $("[id=total]").text()
+		var somaPrecoProdutos = precoProdutos.split('R$')
+
+		var totalPrecoProdutos = somaPrecoProdutos.filter(function (i) {
+			return i;
+		});
+
+		for(var a = 0; a < totalPrecoProdutos.length; a++){
+			sum += parseFloat(totalPrecoProdutos[a])
+		}
+
+
+        console.log(nql)
+		$("#valorItens").text(sum)
+		$("#valorQuarto").text(nql[0])
+		$("#tempoPermanencia").text(tempo)
+		
+		var ttgeral = Number(valor_quarto) + Number(sum)
+
+		$("#totalGeral").text(ttgeral)
+		$("#desconto").click(function(){
+			
+			var codigoDeconto = $("#codigoDesconto").val()
+			$("#totalGeral").text(ttgeral = ttgeral - codigoDeconto)
+			$("#codigoDesconto").val('')
+			var descont = document.getElementById('codigoDesconto')
+			descont.disabled = true
+			$("#valorDesconto").text(codigoDeconto)
+			
 		})
 	})
 }
