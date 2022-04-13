@@ -1,7 +1,3 @@
-
-
-
-
 export function inicioModal(modalID){
     const modal = document.getElementById(modalID)
     modal.classList.add('mostrar')
@@ -14,6 +10,6 @@ export function inicioModal(modalID){
 }
 
 export function fimModal(){
-    var modal = getElementById('modau-camareiras')
-    console.log(modal)
+    $('#modau-camareiras').removeClass('modau-container mostrar').addClass('modau-container')
+    document.getElementById('FormSelecionaCamareira').reset()
 }
