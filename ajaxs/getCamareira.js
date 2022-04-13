@@ -3,6 +3,7 @@ $(document).ready(function(){
 
         resultado.forEach(function(item){
             $('#comboCamareiras').append('<option>' + item.nome + '</option>');
+            $('#selecionaCamareira').append('<option>' + item.nome + '</option>');
         });
     })
 })

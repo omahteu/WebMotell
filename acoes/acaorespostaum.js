@@ -6,6 +6,7 @@ import { pause, reset, start } from '../contadores/contadorUm.js'
 import { listaCamareiras } from "../boxes/box.js"
 import { nomeCamareiras } from "../boxes/box.js"
 import { espera } from "../boxes/box.js"
+import { inicioModal } from "../js/camareiras.js"
 
 var rota = 'rota'
 
@@ -54,6 +55,10 @@ export function resposta1(status){
             
 
             if(confirm('DESEJA DISPONIBILIZAR O QUARTO ' + quarto + ' ?') == true){
+
+                inicioModal('modau-camareiras')
+
+                /*
                 var camareira = prompt('Nome da Camareira:')
 
                 if(camareira != null){
@@ -81,7 +86,7 @@ export function resposta1(status){
                 } else {
                     console.log('cancelado')
                 }
-
+                */
 
 
 

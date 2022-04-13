@@ -379,21 +379,19 @@
 
             <div id="modau-camareiras" class="modau-container">
               <div class="modau">
+                <button class="fechar">X</button>
                 <h3 class="">Selecione a Camareira</h3>
                 <form action="">
-                  <input type="text" name="" id="" placeholder="Camareira">
+                  <select class="form-control" id="selecionaCamareira">
+                    <option hidden>Selecione a Camareira</option>
+                  </select>
                   <input type="button" value="Selecionar">
                 </form>
               </div>
             </div>
-
           </div>
         </div>
       </div>
-
-
-
-
     </div>
   </body>
 
@@ -437,5 +435,7 @@
       <script src="../paginas_js/block.js"></script>
   
       <script src="../paginas_js/sitePath.js"></script>
+
+      <script src="../ajaxs/getCamareira.js"></script>
 
 </html>
