@@ -12,3 +12,8 @@ export function inicioModal(modalID){
         }
     })
 }
+
+export function fimModal(){
+    var modal = getElementById('modau-camareiras')
+    console.log(modal)
+}
