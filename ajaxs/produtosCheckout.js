@@ -27,15 +27,9 @@ $(document).ready(function(){
 })
 })
 
-
-
-
-
-
-
 function produtoCodigo(){
 
-    $('.codProduto').keypress( (event) => {
+    $('.codigoCheckout').keypress( (event) => {
 
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13'){
@@ -135,7 +129,6 @@ function exibirProduto(){
 
 function calcular(){
 
-    console.log('iniciando2')
     var nql = []
     var numero_quarto = JSON.parse(sessionStorage.getItem('quarto'))
 
