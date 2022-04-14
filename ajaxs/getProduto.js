@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
     produtoCodigo()
+    
     $.get("https://defmoteapi.herokuapp.com/produtos/", (resultado) => {
 
     resultado.forEach(function(item){

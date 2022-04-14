@@ -1,5 +1,4 @@
 $(location).ready(function(){
-    
     loginEnter()
     loginClick()
 })
@@ -41,7 +40,7 @@ async function autenticacao(usuario, senha){
 
 function loginEnter(){
 
-    $("#entrar").keypress( (event) => {
+    $(document).keypress( (event) => {
 
         var keycode = (event.keyCode ? event.keyCode : event.which)
 
