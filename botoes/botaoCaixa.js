@@ -2,6 +2,7 @@ $(document).ready(function(){
     var nomeUsuario = sessionStorage.getItem('nome')
     $("#usuario").val(nomeUsuario)
     bloqueiaAbertura()
+    bloqueiaFundo()
     validarUsoFundoCaixa()
 })
 
@@ -37,6 +38,13 @@ function bloqueiaAbertura(){
     var status = sessionStorage.getItem('caixa')
     if(status === 'fechado'){
         $("#abrirCaixa").prop('disabled', false)
+    }
+}
+
+function bloqueiaFundo(){
+    var status = sessionStorage.getItem('caixa')
+    if(status === 'fechado'){
+        $("#usarFundoCaixa").prop('disabled', false)
     }
 }
 

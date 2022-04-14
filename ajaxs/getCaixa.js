@@ -1,7 +1,5 @@
 $(document).ready(function(){
-
     buscaCaixa()
-
 })
 
 async function buscaCaixa(){
@@ -18,6 +16,7 @@ async function buscaCaixa(){
                                         '<td>' + elemento.data + '</td>'+
                                         '<td>' + elemento.entrada + '</td>'+
                                         '<td>' + elemento.usuario + '</td>'+
+                                        '<td>' + elemento.fundo + '</td>'+
                                         '<td>' + elemento.total + '</td>'+
                                         '<td>' + elemento.saida + '</td>'+
                                     '</tr>'
