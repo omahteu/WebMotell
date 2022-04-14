@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    
+
     var nomeUsuario = sessionStorage.getItem('nome')
     $("#usuario").val(nomeUsuario)
     bloqueiaAbertura()
@@ -29,6 +29,7 @@ $("#abrirCaixa").click(function(){
         data: dataAtual,
         entrada: horaAtual,
         usuario: usuario,
+        fundo: "",
         total: "",
         saida: ""
     }
@@ -58,7 +59,9 @@ function validarUsoFundoCaixa(){
     $("#usarFundoCaixa").click( function(){
         var checado = $(this).is(':checked')
         if(checado){
+            
             $("#valorFundoCaixa").css('display', 'block')
+
                                  
         } else {
             $("#valorFundoCaixa").removeAttr('style')
