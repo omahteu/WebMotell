@@ -1,0 +1,8 @@
+#Relatórios
+
+=> Subtrair os produtos vendidos da quantidade geral.
+
+#Quartos
+
+=> Ajeitar a responsividade do tempo
+=> Adicionar a cor amarela a faxina
