@@ -4,5 +4,5 @@
 
 #Quartos
 
-=> Ajeitar a responsividade do tempo
 => Adicionar a cor amarela a faxina
+=> Salvar os veiculos e fazê aparecer no checkout
