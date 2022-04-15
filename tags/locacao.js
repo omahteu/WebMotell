@@ -14,6 +14,8 @@ export function locado(q, t,  x, y, z) {
 
     $("[id=botaoq" + q + "]").css('visibility', 'hidden')
 
+    $("#contagem1"). removeAttr('style')
+
     // Botões Inferiores
     $("#" + x).css('visibility', 'visible')
     $("#" + x).val('Trocar Suíte')

@@ -1216,6 +1216,24 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
   margin-top: 5px;
 }
 
+@media (max-width: 767px) {
+  #x1, #x2, #x3, 
+  #x4, #x5, #x6, 
+  #x7, #x8, #x9, 
+  #x10, #x11, #x12 {
+    visibility: hidden;
+    color: #000;
+    background: rgba(117, 190, 218, 0);
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    width: 11em;
+    margin-left: 95px;
+    border-radius: 10%;
+    margin-top: 5px;
+  }
+}
+
 .reservado {
   background: #1E90FF;
   color: #fff;
