@@ -1258,11 +1258,19 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
   border-radius: 20%;
 }
 
+
+
 .faxina {
   background: 	#FFE4C4;
   color: #fff;
   border: 2px solid 	#FFE4C4;
   border-radius: 20%;
+}
+
+@media (max-width: 767px) {
+  .locado, .manutencao, .faxina {
+    margin-top: -70px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
@@ -1293,6 +1301,17 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
 #hour4, #minute4, #second4 {
   font-size: 22px;
   color: #000;
+}
+
+@media (max-width: 767px) {
+  #hour, #minute, #second, 
+  #hour2, #minute2, #second2, 
+  #hour3, #minute3, #second3,
+  #hour4, #minute4, #second4 {
+    font-size: 22px;
+    color:#000;
+    margin-top: -155px;
+  }
 }
 
 textarea {
