@@ -20,33 +20,42 @@ function informacaoes(){
 		try {
 			var dados = retorno.filter(quartos => quartos.quarto == numero_quarto)
 
-			dados.forEach(elemento => {
+			var existe = dados.length
 
-				var id = elemento.id
-				var descricao =  elemento.descricao
-				var quantidade =  elemento.quantidade
-				var valor_total = elemento.valor_total
-				var valor_unitario = elemento.valor_unitario
-				valor_quarto = elemento.valor_quarto
+			if(existe == 0){
+				
+				InfosPrimario()
+			} else {
+				dados.forEach(elemento => {
 
-				prateleira.innerHTML += '<tr>'+
-											'<td>'+
-												'<div class="product-cart d-flex">'+
-													'<div class="product-content media-body">'+
-														'<h5 class="title">' + descricao + '</h5>'+
-														'<span>Unidade Custa R$ ' + valor_unitario + '</span>'+
+					var id = elemento.id
+					var descricao =  elemento.descricao
+					var quantidade =  elemento.quantidade
+					var valor_total = elemento.valor_total
+					var valor_unitario = elemento.valor_unitario
+					valor_quarto = elemento.valor_quarto
+	
+					prateleira.innerHTML += '<tr>'+
+												'<td>'+
+													'<div class="product-cart d-flex">'+
+														'<div class="product-content media-body">'+
+															'<h5 class="title">' + descricao + '</h5>'+
+															'<span>Unidade Custa R$ ' + valor_unitario + '</span>'+
+														'</div>'+
 													'</div>'+
-												'</div>'+
-											'</td>'+
-											'<td>'+
-												'<p>' + quantidade + '</p>'+
-											'</td>'+
-											'<td>'+
-												'<p class="price" id="total">' + valor_total + '</p>'+
-											'</td>'+
-											'<td><button onclick="removeItens(' + id  + ')" class="btn btn-danger">Remover</button></td>'+
-										'</tr>';
-			});
+												'</td>'+
+												'<td>'+
+													'<p>' + quantidade + '</p>'+
+												'</td>'+
+												'<td>'+
+													'<p class="price" id="total">' + valor_total + '</p>'+
+												'</td>'+
+												'<td><button onclick="removeItens(' + id  + ')" class="btn btn-danger">Remover</button></td>'+
+											'</tr>';
+				});
+			}
+
+
 		} catch (error) {
 			localStorage.setItem('produtos', JSON.stringify([]))
 		}
@@ -117,3 +126,26 @@ function getValores(){
 	// RECEBER E EXIBIR NOS RELATÓRIOS
 	// EXIBIR NO FECHAMENTO
 }	
+
+async function InfosPrimario(){
+
+	const resposta = await fetch('https://defmoteapi.herokuapp.com/infos/')
+	const data = await resposta.json()
+
+	var prateleira = document.getElementById('itensComprados');
+	prateleira.innerHTML = '';
+
+	var valor_quarto
+	var sum = 0
+
+	data.forEach(elemento => {
+		valor_quarto = elemento.valor
+	});
+
+	$("#valorQuarto").text(valor_quarto)
+	$("#valorItens").text(sum)
+	
+	var ttgeral = Number(valor_quarto) + Number(sum)
+
+	$("#totalGeral").text(ttgeral)
+}
