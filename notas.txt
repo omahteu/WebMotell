@@ -6,4 +6,5 @@
 
 => Salvar os veiculos e fazê aparecer no checkout
 => Consertar a contagem fora da responsividade
+=> Consertar a contagem que ta travando
 

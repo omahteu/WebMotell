@@ -20,10 +20,10 @@ export function index(){
     }
 
 
-    $.get("https://defmoteapi.herokuapp.com/header/", function(retorno){
+    $.get("https://defmoteapi.herokuapp.com/infos/", function(retorno){
 
         if(retorno.length == 0){
-            $.post("https://defmoteapi.herokuapp.com/header/", dados, function(){})
+            $.post("https://defmoteapi.herokuapp.com/infos/", dados, function(){})
         }
 
         retorno.forEach(function(item){
@@ -33,7 +33,7 @@ export function index(){
             } 
             
             if(item.quarto != quarto){
-                $.post("https://defmoteapi.herokuapp.com/header/", dados, function(){})
+                $.post("https://defmoteapi.herokuapp.com/infos/", dados, function(){})
             }
         })
     })

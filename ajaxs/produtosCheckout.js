@@ -7,8 +7,6 @@ $(document).ready(function(){
     resultado.forEach(function(item){
         $('#listaCheckout').append('<option>' + item.descricao + '</option>');
     });
-    
-    //codProduto
 
     $('#listaCheckout').change(function() {
         var option = $('#listaCheckout').find(":selected").index()
@@ -47,9 +45,7 @@ function produtoCodigo(){
                     $(".totalCheckout").val('R$ ' + total)
                 });
             })
-
         }
-    
     });
 }
 
@@ -76,6 +72,8 @@ $("#addLista").click(function(){
 		// Exibe os Produtos
 		//exibirProduto();
         calcular()
+		
+		document.getElementById('FormPostProdutosCheckout').reset()
         //window.location.reload()
     })
 })
@@ -100,7 +98,6 @@ function exibirProduto(){
 		dados.forEach(function(resultado){
 
 			var id = resultado.id
-			//var quarto = resultado.quarto
 			var descricao = resultado.descricao
 			var quantidade = resultado.quantidade
 			var valorUnitario = resultado.valor_unitario

@@ -134,7 +134,7 @@ $("[id=mon]").mousedown(function(){
 
 function backupInfos(instancia){
 
-	$.get("https://defmoteapi.herokuapp.com/header/", function(retorno){
+	$.get("https://defmoteapi.herokuapp.com/infos/", function(retorno){
 
 		var nQuarto =  $("#numquarto").text()
 

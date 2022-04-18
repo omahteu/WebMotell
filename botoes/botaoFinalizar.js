@@ -54,7 +54,7 @@ function zerarComanda(){
 
 function zerarHeader(){
           
-    $.get("https://defmoteapi.herokuapp.com/header/", function(retorno){
+    $.get("https://defmoteapi.herokuapp.com/infos/", function(retorno){
 
         var numero_quarto = JSON.parse(sessionStorage.getItem('quarto'))
 
@@ -66,7 +66,7 @@ function zerarHeader(){
             var quarto = dados[i].quarto
             var entrada = dados[i].datahora
 
-            liviaExclui("https://defmoteapi.herokuapp.com/header/", identificador)
+            liviaExclui("https://defmoteapi.herokuapp.com/infos/", identificador)
 
         }
 

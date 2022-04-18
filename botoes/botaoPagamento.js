@@ -27,6 +27,17 @@ function selecionaCredito(){
             credito.forEach(element => {
                 $('#bandeiras').append('<option>' + element.bandeira + '</option>');
             });
+
+            $('#bandeiras').change(function() {
+                var option = $('#bandeiras').find(":selected").index()
+        
+                var db = option - 1
+
+                confirm(`Deseja escolher a opção ${credito[db].bandeira}?`)
+
+                console.log(credito[db].bandeira)
+            
+            });
         }
     })
 }
@@ -42,6 +53,17 @@ function selecionaDebito(){
             debito.forEach(element => {
                 $('#bandeiras').append('<option>' + element.bandeira + '</option>')
                 
+            });
+
+            $('#bandeiras').change(function() {
+                var option = $('#bandeiras').find(":selected").index()
+        
+                var db = option - 1
+
+                confirm(`Deseja escolher a opção ${debito[db].bandeira}?`)
+
+                console.log(debito[db].bandeira)
+            
             });
                                  
         }

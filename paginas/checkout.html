@@ -25,18 +25,18 @@
                 d-flex
                 flex-wrap">
                 <div class="checkout-coupon">
-                  <form>
+                  <form id="FormPostProdutosCheckout">
                     <div class="single-form form-default d-flex">
                       <div class="form-input form">
-                        <input type="text" id="addProdutos" class="pessoasCheckout" placeholder="Pessoas">
+                        <input type="number" min="2" id="addProdutos" class="pessoasCheckout" placeholder="Pessoas">
                         <input type="text" id="addProdutos" class="codigoCheckout" placeholder="Código">
                         <select class="" id="listaCheckout">
                           <option hidden>Produtos</option>
                         </select>
                         <input type="text" id="addProdutos" class="quantidadeCheckout" placeholder="Quantidade">
-                        <input type="text" id="addProdutos" class="descricaoCheckout" placeholder="Descrição">
-                        <input type="text" id="addProdutos" class="unitarioCheckout" placeholder="Valor Unitário">
-                        <input type="text" id="addProdutos" class="totalCheckout" placeholder="Total">
+                        <input type="text" id="addProdutos" class="descricaoCheckout" placeholder="Descrição" disabled>
+                        <input type="text" id="addProdutos" class="unitarioCheckout" placeholder="Valor Unitário" disabled>
+                        <input type="text" id="addProdutos" class="totalCheckout" placeholder="Total" disabled>
                       </div>
                       <button type="button" class="main-btn primary-btn" id="addLista">+</button>
                     </div>
@@ -79,7 +79,7 @@
               <div class="checkout-coupon">
                 <form>
                   <div class="single-form form-default d-flex">
-                    <div class="form-input form">
+                    <div class="">
                       <select class="" id="comboCamareiras">
                         <option value="" hidden>Camareira</option>
                       </select>
