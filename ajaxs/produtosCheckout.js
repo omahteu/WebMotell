@@ -67,15 +67,21 @@ $("#addLista").click(function(){
         valor_quarto: ''
 	}
 
-    $.post("https://defmoteapi.herokuapp.com/comanda/", produto, function(msg){
+	if(produto.valor_quarto === ''){
+		alert('Não é possível adicionar produto vázio!')
+	} else {
+		$.post("https://defmoteapi.herokuapp.com/comanda/", produto, function(msg){
 
-		// Exibe os Produtos
-		//exibirProduto();
-        calcular()
-		
-		document.getElementById('FormPostProdutosCheckout').reset()
-        //window.location.reload()
-    })
+			// Exibe os Produtos
+			//exibirProduto();
+			calcular()
+			
+			document.getElementById('FormPostProdutosCheckout').reset()
+			//window.location.reload()
+		})
+	}
+
+
 })
 
 function exibirProduto(){
@@ -186,8 +192,6 @@ function calcular(){
 			sum += parseFloat(totalPrecoProdutos[a])
 		}
 
-
-        console.log(nql)
 		$("#valorItens").text(sum)
 		$("#valorQuarto").text(nql[0])
 		$("#tempoPermanencia").text(tempo)
