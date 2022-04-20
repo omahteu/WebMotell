@@ -36240,7 +36240,7 @@ select:focus {
   }
 }
 
-#bandeiras {
+#bandeiras, #parcelas {
   display: none;
 }
 

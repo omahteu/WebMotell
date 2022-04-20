@@ -33,9 +33,11 @@ function selecionaCredito(){
         
                 var db = option - 1
 
-                confirm(`Deseja escolher a opção ${credito[db].bandeira}?`)
+                var creditoEscolhido = confirm(`Deseja escolher a opção ${credito[db].bandeira}?`)
 
-                console.log(credito[db].bandeira)
+                if(creditoEscolhido == true){
+                    $("#parcelas").css('display', 'block')
+                }
             
             });
         }
@@ -60,9 +62,14 @@ function selecionaDebito(){
         
                 var db = option - 1
 
-                confirm(`Deseja escolher a opção ${debito[db].bandeira}?`)
+                
 
-                console.log(debito[db].bandeira)
+                var debitoEscolhido = confirm(`Deseja escolher a opção ${debito[db].bandeira}?`)
+
+
+                if(debitoEscolhido == true){
+                    $("#parcelas").css('display', 'block')
+                } 
             
             });
                                  

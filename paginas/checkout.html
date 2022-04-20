@@ -103,9 +103,16 @@
                         <select id="bandeiras">
                           <option hidden>Selecione</option>
                         </select>
+                        <input type="number" name="" id="parcelas" min="1" placeholder="Parcelas">
                       </div>
                   </div>
-                  
+
+                  <div class="d-block my-3">
+                    <div class="">
+                        <input id="credit" name="paymentMethod" type="number" class="custom-control-input" required>
+                        
+                    </div>
+                </div>
                 </form>
               </div>
               <!-- Valores -->
@@ -129,6 +136,14 @@
                 <div class="single-total">
                   <p class="value">Descontos:</p>
                   <p class="price">- R$ <span id="valorDesconto">0</span></p>
+                </div>
+                <div class="single-total total-payable">
+                  <p class="value">Sub Total:</p>
+                  <p class="price">R$ <span id="subTotal">0</span></p>
+                </div>
+                <div class="single-total total-payable">
+                  <p class="value">Parcelas:</p>
+                  <p class="price"> <span id="nParcelas">0x</span> R$ <span id="subTotal">0</span></p>
                 </div>
                 <div class="single-total total-payable">
                   <p class="value">Total:</p>
