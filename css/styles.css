@@ -36240,7 +36240,7 @@ select:focus {
   }
 }
 
-#bandeiras, #parcelas {
+#bandeiraCredito, #bandeiraDebito, #parcelas {
   display: none;
 }
 

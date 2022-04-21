@@ -1,5 +1,5 @@
 credito = [{
-    bandeira: 'Visa - Acréscimo de 3.5%'
+    bandeira: 'Visa - Acréscimo de 3.5%',
 }, {
     bandeira: 'Master - Acréscimo de 4.2%'
 }]
@@ -10,79 +10,63 @@ debito = [{
     bandeira: 'Master - Acréscimo de 1.2%'
 }]
 
-$(document).ready(function(){
-    selecionaCredito()
-    selecionaDebito()
-    selecionaDinheiro()
+$("[name='paymentMethod']").click(function(){
+    
+    document.getElementById('bandeiraCredito').innerHTML = '<option hidden>Selecione</option>'
+
+    var metodo = this.id
+
+    switch (metodo) {
+        case 'credit':
+            var creditoChecado = $('#credit').is(':checked')
+            if(creditoChecado){
+                $("#bandeiraCredito").css('display', 'block')
+    
+                credito.forEach(element => {
+                    $('#bandeiraCredito').append('<option>' + element.bandeira + '</option>');
+                });
+            }
+            break;
+
+        case 'debit':
+            var debitoChecado = $('#debit').is(':checked')
+            if(debitoChecado){
+                $("#bandeiraDebito").css('display', 'block')
+
+                debito.forEach(elemento => {
+                    $('#bandeiraDebito').append('<option>' + elemento.bandeira + '</option>');
+                })
+            }
+            break
+
+        case 'dinheiro':
+            var dinheiroChecado = $(this).is(':checked')
+            if(dinheiroChecado){
+                $("#bandeiras").css('display', 'none')
+                $("#parcelas").css('display', 'none')
+            }
+            break
+    
+        default:
+            break;
+    }
 })
 
-function selecionaCredito(){
-    
-    $("#credit").click( function(){
-        document.getElementById('bandeiras').innerHTML = '<option hidden>Selecione</option>'
-        var checado = $(this).is(':checked')
-        if(checado){
-            $("#bandeiras").css('display', 'block')
-            
-            credito.forEach(element => {
-                $('#bandeiras').append('<option>' + element.bandeira + '</option>');
-            });
+function npc(){
+    console.log($('#bandeiraCredito'))
+     
+    var option = $('#bandeiraCredito').find(":selected").index()
+    var db = option - 1
 
-            $('#bandeiras').change(function() {
-                var option = $('#bandeiras').find(":selected").index()
-        
-                var db = option - 1
-
-                var creditoEscolhido = confirm(`Deseja escolher a opção ${credito[db].bandeira}?`)
-
-                if(creditoEscolhido == true){
-                    $("#parcelas").css('display', 'block')
-                }
-            
-            });
-        }
-    })
+    alert(`Deseja escolher a opção ${credito[db].bandeira}?`)
+    $("#parcelas").css('display', 'block')
+       
 }
 
-function selecionaDebito(){
+function npd(){
+    var option = $('#bandeiraDebito').find(":selected").index()
+    var db = option - 1
 
-    $("#debit").click( function(){
-        document.getElementById('bandeiras').innerHTML = '<option hidden>Selecione</option>'
-        var checado = $(this).is(':checked')
-        if(checado){
-            $("#bandeiras").css('display', 'block')
-
-            debito.forEach(element => {
-                $('#bandeiras').append('<option>' + element.bandeira + '</option>')
-                
-            });
-
-            $('#bandeiras').change(function() {
-                var option = $('#bandeiras').find(":selected").index()
-        
-                var db = option - 1
-
-                
-
-                var debitoEscolhido = confirm(`Deseja escolher a opção ${debito[db].bandeira}?`)
-
-
-                if(debitoEscolhido == true){
-                    $("#parcelas").css('display', 'block')
-                } 
-            
-            });
-                                 
-        }
-    })
-}
-
-function selecionaDinheiro(){
-
-    $("#dinheiro").click(function(){
-        var checado = $(this).is(':checked')
-        if(checado){
-            $("#bandeiras").css('display', 'none')
-        }
-    })
+    alert(`Deseja escolher a opção ${debito[db].bandeira}?`)
+    $("#parcelas").css('display', 'block')
 }

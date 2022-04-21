@@ -87,34 +87,35 @@
                   </div>
 
                   <div class="d-block my-3">
-                      <div class="custom-control custom-radio">
-                          <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" required>
-                          <label class="custom-control-label" for="credit">Cartão de Crédito</label>
-                      </div>
-                      <div class="custom-control custom-radio">
-                          <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-                          <label class="custom-control-label" for="debit">Cartão de Débito</label>
-                      </div>
-                      <div class="custom-control custom-radio">
-                          <input id="dinheiro" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-                          <label class="custom-control-label" for="dinheiro">Dinheiro</label>
-                      </div>
-                      <div class="custom-control">
-                        <select id="bandeiras">
-                          <option hidden>Selecione</option>
-                        </select>
-                        <input type="number" name="" id="parcelas" min="1" placeholder="Parcelas">
-                      </div>
-                  </div>
+                    <div class="custom-control custom-radio">
+                        <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                        <label class="custom-control-label" for="credit">Cartão de Crédito</label>
 
-                  <div class="d-block my-3">
-                    <div class="">
-                        <input id="credit" name="paymentMethod" type="number" class="custom-control-input" required>
-                        
                     </div>
-                </div>
+                    <div class="custom-control custom-radio">
+                        <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                        <label class="custom-control-label" for="debit">Cartão de Débito</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="dinheiro" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                        <label class="custom-control-label" for="dinheiro">Dinheiro</label>
+                    </div>
+                    <div class="custom-control">
+                      <select id="bandeiraCredito" onchange="npc()">
+                        <option hidden>Selecione</option>
+                      </select>
+                      <input type="number" name="" id="parcelas" min="1" placeholder="Parcelas">
+                    </div>
+                    <div class="custom-control">
+                      <select id="bandeiraDebito" onchange="npd()">
+                        <option hidden>Selecione</option>
+                      </select>
+                      <input type="number" name="" id="parcelas" min="1" placeholder="Parcelas">
+                    </div>
+                  </div>
                 </form>
               </div>
+
               <!-- Valores -->
               <div class="checkout-total">
                 <div class="single-total">
