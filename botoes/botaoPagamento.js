@@ -1,56 +1,56 @@
-credito = [{
-    bandeira: 'Visa - Acréscimo de 3.5%',
-}, {
-    bandeira: 'Master - Acréscimo de 4.2%'
-}]
-
-debito = [{
-    bandeira: 'Visa - Acréscimo de 1.5%'
-}, {
-    bandeira: 'Master - Acréscimo de 1.2%'
-}]
-
-$("[name='paymentMethod']").click(function(){
-    
-    document.getElementById('bandeiraCredito').innerHTML = '<option hidden>Selecione</option>'
-
-    var metodo = this.id
-
-    switch (metodo) {
-        case 'credit':
-            var creditoChecado = $('#credit').is(':checked')
-            if(creditoChecado){
-                $("#bandeiraCredito").css('display', 'block')
-    
-                credito.forEach(element => {
-                    $('#bandeiraCredito').append('<option>' + element.bandeira + '</option>');
-                });
-            }
-            break;
-
-        case 'debit':
-            var debitoChecado = $('#debit').is(':checked')
-            if(debitoChecado){
-                $("#bandeiraDebito").css('display', 'block')
-
-                debito.forEach(elemento => {
-                    $('#bandeiraDebito').append('<option>' + elemento.bandeira + '</option>');
-                })
-            }
-            break
-
-        case 'dinheiro':
-            var dinheiroChecado = $(this).is(':checked')
-            if(dinheiroChecado){
-                $("#bandeiras").css('display', 'none')
-                $("#parcelas").css('display', 'none')
-            }
-            break
-    
-        default:
-            break;
-    }
+$(document).ready(function(){
+    buscaTarifasBandeiras()
 })
+
+async function buscaTarifasBandeiras(){
+    const respostaCredito = await fetch('https://defmoteapi.herokuapp.com/credito/')
+    const respostaDebito = await fetch('https://defmoteapi.herokuapp.com/debito/')
+    const dadosCredito = await respostaCredito.json()
+    const dadosDebito = await respostaDebito.json()
+
+    $("[name='paymentMethod']").click(function(){
+    
+        document.getElementById('bandeiraCredito').innerHTML = '<option hidden>Selecione</option>'
+    
+        var metodo = this.id
+    
+        switch (metodo) {
+            case 'credit':
+                var creditoChecado = $('#credit').is(':checked')
+                if(creditoChecado){
+                    $("#bandeiraCredito").css('display', 'block')
+        
+                    dadosCredito.forEach(element => {
+                        $('#bandeiraCredito').append(`<option>${element.bandeira} - Acréscimo de ${element.porcentagem}%</option>`)
+                    });
+                }
+                break;
+    
+            case 'debit':
+                var debitoChecado = $('#debit').is(':checked')
+                if(debitoChecado){
+                    $("#bandeiraDebito").css('display', 'block')
+    
+                    dadosDebito.forEach(elemento => {
+                        $('#bandeiraDebito').append(`<option>${elemento.bandeira} - Acréscimo de ${elemento.porcentagem}%</option>`)
+                    })
+                }
+                break
+    
+            case 'dinheiro':
+                var dinheiroChecado = $(this).is(':checked')
+                if(dinheiroChecado){
+                    $("#bandeiras").css('display', 'none')
+                    $("#parcelas").css('display', 'none')
+                }
+                break
+        
+            default:
+                break;
+        }
+    })
+
+}
 
 function npc(){
     console.log($('#bandeiraCredito'))
